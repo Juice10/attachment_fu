@@ -28,7 +28,7 @@ module Technoweenie # :nodoc:
       
         # The attachment ID used in the full path of a file
         def attachment_path_id
-          ((respond_to?(:parent_id) && parent_id) || id).to_i
+          ((respond_to?(:parent_id) && parent_id && parent_id != 0) || id).to_i
         end
       
         # by default paritions files into directories e.g. 0000/0001/image.jpg
